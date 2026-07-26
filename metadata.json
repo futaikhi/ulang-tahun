@@ -1,0 +1,6 @@
+{
+  "name": "Hadiah Ulang Tahun Lia",
+  "description": "Website hadiah ulang tahun retro pixel art 80s hangat & spesial untuk Lia, calon istriku.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

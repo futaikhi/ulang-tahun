@@ -1,0 +1,174 @@
+/* Global Retro 80s NES Pixel Theme CSS */
+
+:root {
+  --nes-sky: #5c94fc;
+  --nes-sky-light: #80b0ff;
+  --nes-grass: #00a800;
+  --nes-grass-dark: #005000;
+  --nes-brick: #c84c0c;
+  --nes-brick-dark: #881400;
+  --nes-tan: #f8d870;
+  --nes-brown: #a04800;
+  --nes-gold: #f8b800;
+  --nes-red: #e60000;
+  --nes-red-dark: #880000;
+  --nes-paper: #fffdf0;
+  --nes-paper-dark: #f0e6c8;
+  --nes-text: #212529;
+  --nes-border: #000000;
+
+  --font-pixel-heading: 'Press Start 2P', cursive, monospace;
+  --font-pixel-body: 'Pixelify Sans', cursive, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #212121;
+  color: var(--nes-text);
+  font-family: var(--font-pixel-body);
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #111;
+}
+
+/* App Container - Responsive Mobile Frame & Wide Screen Center */
+.app-viewport {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: var(--nes-sky);
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow-x: hidden;
+}
+
+/* Custom Pixel Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nes-tan);
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nes-gold);
+}
+
+/* Common Typography */
+h1, h2, h3, .pixel-heading {
+  font-family: var(--font-pixel-heading);
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+p, span, button, input {
+  font-family: var(--font-pixel-body);
+}
+
+/* Pixel Art Utilities */
+.pixel-border {
+  border: 4px solid #000;
+  box-shadow:
+    inset -4px -4px 0px rgba(0, 0, 0, 0.25),
+    inset 4px 4px 0px rgba(255, 255, 255, 0.4);
+}
+
+.pixel-card {
+  background-color: var(--nes-paper);
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  padding: 16px;
+  position: relative;
+}
+
+.pixel-card-gold {
+  background-color: var(--nes-tan);
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  padding: 16px;
+}
+
+/* Interactive Touch / Active Effects */
+.pixel-btn {
+  font-family: var(--font-pixel-heading);
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--nes-red);
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  padding: 14px 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pixel-btn:hover {
+  background-color: #ff3333;
+}
+
+.pixel-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+.pixel-btn-secondary {
+  background-color: var(--nes-tan);
+  color: #000;
+}
+
+.pixel-btn-secondary:hover {
+  background-color: var(--nes-gold);
+}
+
+.pixel-badge {
+  display: inline-block;
+  font-family: var(--font-pixel-heading);
+  font-size: 10px;
+  background-color: #000;
+  color: var(--nes-tan);
+  padding: 4px 8px;
+  border-radius: 0;
+  border: 2px solid var(--nes-tan);
+}
+
+/* Smooth Scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}

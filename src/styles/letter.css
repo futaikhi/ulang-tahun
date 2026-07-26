@@ -1,0 +1,90 @@
+/* Expanded Letter Content Styles */
+
+.letter-full-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, margin 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.letter-full-container.visible {
+  max-height: 3000px;
+  margin-top: 24px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.letter-paper-scroll {
+  background-color: var(--nes-paper);
+  border: 5px solid #000;
+  box-shadow:
+    8px 8px 0px rgba(0, 0, 0, 0.6),
+    inset -4px -4px 0px rgba(0, 0, 0, 0.05);
+  padding: 28px 20px;
+  position: relative;
+  margin: 20px;
+}
+
+/* NES Letter Paper Texture / Stamp watermark top right */
+.letter-paper-scroll::before {
+  content: '❤️';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-pixel-heading);
+  font-size: 9px;
+  color: #c89650;
+  border: 2px dashed #c89650;
+  padding: 4px 6px;
+  opacity: 0.8;
+}
+
+.letter-header-title {
+  font-family: var(--font-pixel-heading);
+  font-size: 15px;
+  color: var(--nes-red);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: left;
+  border-bottom: 3px double #000;
+  padding-bottom: 10px;
+}
+
+.letter-body-paragraph {
+  font-family: var(--font-pixel-body);
+  font-size: 19px;
+  color: #212529;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.letter-body-paragraph.highlight {
+  background-color: #fff3c4;
+  border-left: 4px solid var(--nes-gold);
+  padding-left: 10px;
+}
+
+.letter-signature-box {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 3px double #000;
+  text-align: right;
+  font-family: var(--font-pixel-body);
+  font-size: 18px;
+  color: var(--nes-brown);
+  font-weight: bold;
+}
+
+.letter-heart-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,222 @@
+/* Photo Stamp Collection Gallery & Lightbox CSS */
+
+.gallery-section {
+  width: 100%;
+  padding: 50px 16px 80px 16px;
+  background-color: var(--nes-tan);
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  position: relative;
+}
+
+.gallery-title-box {
+  background-color: #000;
+  color: var(--nes-gold);
+  border: 4px solid #fff;
+  padding: 12px 20px;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  max-width: 320px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-title-text {
+  font-family: var(--font-pixel-heading);
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+
+/* 2 Columns x 3 Rows Grid */
+.stamp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Individual Pixel Stamp Card */
+.pixel-stamp {
+  background-color: var(--nes-paper);
+  border: 4px solid #000;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pixel-stamp:hover, .pixel-stamp:active {
+  transform: scale(1.04) translateY(-3px);
+  box-shadow: 7px 7px 0px #000;
+  background-color: #fffdf8;
+}
+
+/* Perforated stamp teeth effect top/bottom */
+.pixel-stamp::before {
+  content: '•••';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #000;
+  letter-spacing: 4px;
+}
+
+.stamp-img-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 3px solid #000;
+  overflow: hidden;
+  position: relative;
+  background-color: #e0d0b0;
+}
+
+.stamp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease;
+}
+
+.pixel-stamp:hover .stamp-img {
+  transform: scale(1.08);
+}
+
+.stamp-caption {
+  font-family: var(--font-pixel-body);
+  font-size: 15px;
+  color: #000;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.stamp-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--nes-red);
+  color: #fff;
+  font-family: var(--font-pixel-heading);
+  font-size: 8px;
+  padding: 2px 4px;
+  border: 1px solid #000;
+}
+
+/* Lightbox Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: var(--nes-paper);
+  border: 5px solid #000;
+  box-shadow: 10px 10px 0px var(--nes-red);
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: modalZoom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalZoom {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  background-color: var(--nes-red);
+  color: #fff;
+  font-family: var(--font-pixel-heading);
+  font-size: 14px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
+}
+
+.modal-close-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.modal-img-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 4px solid #000;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 14px;
+  background-color: #000;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.modal-title {
+  font-family: var(--font-pixel-heading);
+  font-size: 13px;
+  color: var(--nes-red);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.modal-desc {
+  font-family: var(--font-pixel-body);
+  font-size: 17px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.modal-nav-btn {
+  flex: 1;
+  font-size: 11px;
+  padding: 10px;
+}

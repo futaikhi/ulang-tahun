@@ -1,0 +1,151 @@
+/* Hero Section Styles */
+
+.hero-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 24px 16px 0 16px;
+  background: linear-gradient(180deg, var(--nes-sky) 0%, #80b0ff 60%, #a0c8ff 100%);
+  text-align: center;
+}
+
+.hero-header {
+  margin-top: 16px;
+  z-index: 10;
+  width: 100%;
+}
+
+.hero-greeting {
+  font-family: var(--font-pixel-heading);
+  font-size: 26px;
+  color: #ffffff;
+  text-shadow:
+    3px 3px 0px #000,
+    -3px -3px 0px #000,
+    3px -3px 0px #000,
+    -3px 3px 0px #000,
+    0px 4px 0px #000;
+  margin-bottom: 24px;
+  animation: heroBounce 2s infinite ease-in-out;
+  z-index: 10;
+  position: relative;
+}
+
+@keyframes heroBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.typewriter-box {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 4px solid #ffffff;
+  outline: 4px solid #000000;
+  padding: 20px 16px;
+  margin: 0 auto;
+  max-width: 380px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.typewriter-text {
+  font-family: var(--font-pixel-body);
+  font-size: 20px;
+  color: var(--nes-tan);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.typewriter-subtext {
+  font-family: var(--font-pixel-body);
+  font-size: 17px;
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--nes-gold);
+  margin-left: 4px;
+  animation: cursorBlink 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-action {
+  z-index: 10;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.btn-open-gift {
+  font-size: 16px;
+  padding: 16px 28px;
+  background-color: var(--nes-red);
+  color: #fff;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  animation: buttonPulse 1.5s infinite alternate;
+}
+
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Clouds in Hero */
+.cloud-1 {
+  top: 35px;
+  width: 90px;
+  height: 24px;
+  animation: cloudMove1 22s linear infinite;
+}
+
+.cloud-2 {
+  top: 110px;
+  width: 120px;
+  height: 30px;
+  animation: cloudMove2 32s linear infinite;
+  animation-delay: -12s;
+}
+
+.cloud-3 {
+  top: 180px;
+  width: 75px;
+  height: 20px;
+  animation: cloudMove3 25s linear infinite;
+  animation-delay: -5s;
+}
+
+@keyframes cloudMove1 {
+  0% { left: -100px; }
+  100% { left: 100%; }
+}
+
+@keyframes cloudMove2 {
+  0% { left: -140px; }
+  100% { left: 100%; }
+}
+
+@keyframes cloudMove3 {
+  0% { left: -90px; }
+  100% { left: 100%; }
+}
