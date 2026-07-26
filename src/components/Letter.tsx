@@ -54,7 +54,7 @@ export default function Letter({ isVisible }: LetterProps) {
 
         <p className="letter-body-paragraph" style={{ fontWeight: 'bold', color: 'var(--nes-red)', marginTop: '20px' }}>
           Terima kasih sudah menjadi 'Player 2' terbaik dalam petualanganku. <br />
-          Tahun depan kita akan memulai babak baru, dari lamaran hingga pernikahan. <br />
+          Tahun depan kita akan memulai babak baru. <br />
           Aku tidak sabar untuk terus 'co-op' bersamamu untuk selamanya. <br />
           I love you!
         </p>
