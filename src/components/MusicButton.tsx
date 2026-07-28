@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { retroAudio } from '../utils/sound';
 
 export default function MusicButton() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  const handleToggle = () => {
-    const newState = retroAudio.toggleBGM((playing) => {
+  useEffect(() => {
+    const unsubscribe = retroAudio.subscribe((playing) => {
       setIsPlaying(playing);
     });
-    setIsPlaying(newState);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    retroAudio.toggleBGM();
   };
 
   return (

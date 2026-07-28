@@ -49,6 +49,26 @@ class RetroAudioEngine {
     { note: 'REST', duration: 0.6 },
   ];
 
+  private listeners: Set<(playing: boolean) => void> = new Set();
+
+  public subscribe(listener: (playing: boolean) => void) {
+    this.listeners.add(listener);
+    listener(this.isPlayingBGM);
+    return () => {
+      this.listeners.delete(listener);
+    };
+  }
+
+  private notifyListeners() {
+    this.listeners.forEach((fn) => {
+      try {
+        fn(this.isPlayingBGM);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
+
   public initCtx() {
     if (!this.ctx) {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -67,6 +87,7 @@ class RetroAudioEngine {
     this.currentNoteIndex = 0;
     this.scheduleNextNote(onStateChanged);
     if (onStateChanged) onStateChanged(true);
+    this.notifyListeners();
     return true;
   }
 
@@ -132,6 +153,7 @@ class RetroAudioEngine {
       this.currentNoteIndex = 0;
       this.scheduleNextNote(onStateChanged);
       if (onStateChanged) onStateChanged(true);
+      this.notifyListeners();
       return true;
     }
   }
@@ -162,6 +184,7 @@ class RetroAudioEngine {
       clearTimeout(this.timerId);
       this.timerId = null;
     }
+    this.notifyListeners();
   }
 
   public getIsPlaying(): boolean {
