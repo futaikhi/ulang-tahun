@@ -205,7 +205,7 @@
   width: 18px;
   height: 16px;
   background-color: #ffffff;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   border-radius: 4px 4px 2px 2px;
   margin: 0 auto;
   position: relative;
@@ -245,8 +245,8 @@
 .gwen-sprite-body {
   width: 18px;
   height: 14px;
-  background-color: #0f172a;
-  border: 2px solid #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   margin: -1px auto 0 auto;
   position: relative;
   border-radius: 0 0 2px 2px;
