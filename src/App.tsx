@@ -149,7 +149,7 @@ export default function App() {
       >
         <p style={{ color: 'var(--spidey-yellow)' }}>🕷️ UNTUK LIA ❤️ SELAMAT ULANG TAHUN 🕸️</p>
         <p style={{ color: '#ffffff', marginTop: '6px' }}>
-          8-BIT DAYTIME SPIDER-MAN EDITION • 2026
+          8-BIT SPIDER-MAN EDITION • 2026
         </p>
       </footer>
     </div>

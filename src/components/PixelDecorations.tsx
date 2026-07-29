@@ -18,7 +18,7 @@ export default function PixelDecorations() {
 
     setTimeout(() => {
       setToastMessage(null);
-    }, 2800);
+    }, 3500);
   };
 
   return (
@@ -50,10 +50,10 @@ export default function PixelDecorations() {
         <span className="pixel-star"></span>
       </div>
 
-      {/* Toast Popup */}
+      {/* Toast Popup Banner */}
       {toastMessage && (
         <div className="pixel-toast">
-          {toastMessage}
+          <span className="toast-text">{toastMessage}</span>
         </div>
       )}
     </>

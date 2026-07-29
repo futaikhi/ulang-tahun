@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="spidey-sprite-body"></div>
       </div>
 
-      <h1 className="hero-greeting">Halo Lia ❤️</h1>
+      <h1 className="hero-greeting">Halo Lia</h1>
 
       <div className="typewriter-box">
         <p className="typewriter-text">

@@ -15,7 +15,7 @@ export default function Envelope({ isOpen, onToggle }: EnvelopeProps) {
 
     setIsAnimating(true);
     if (!isOpen) {
-      retroAudio.playSfx('open');
+      // retroAudio.playSfx('open');
       retroAudio.startBGM();
       setTimeout(() => {
         onToggle();
