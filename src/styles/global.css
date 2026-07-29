@@ -1,17 +1,25 @@
-/* Global Retro 80s NES Pixel Theme CSS */
+/* Global Retro 80s & Spider-Man NES Pixel Theme CSS - Daytime Edition */
 
 :root {
-  --nes-sky: #5c94fc;
-  --nes-sky-light: #80b0ff;
-  --nes-grass: #00a800;
-  --nes-grass-dark: #005000;
-  --nes-brick: #c84c0c;
-  --nes-brick-dark: #881400;
-  --nes-tan: #f8d870;
-  --nes-brown: #a04800;
-  --nes-gold: #f8b800;
-  --nes-red: #e60000;
-  --nes-red-dark: #880000;
+  --nes-sky: #38bdf8;
+  --nes-sky-light: #bae6fd;
+  --spidey-red: #e62429;
+  --spidey-red-dark: #900c0f;
+  --spidey-blue: #0f52ba;
+  --spidey-blue-dark: #0a2540;
+  --spidey-yellow: #ffe500;
+  --spidey-black: #121212;
+  --spidey-web: #ffffff;
+
+  --nes-grass: #38bdf8;
+  --nes-grass-dark: #0284c7;
+  --nes-brick: #e62429;
+  --nes-brick-dark: #900c0f;
+  --nes-tan: #ffe500;
+  --nes-brown: #7f1d1d;
+  --nes-gold: #ffe500;
+  --nes-red: #e62429;
+  --nes-red-dark: #900c0f;
   --nes-paper: #fffdf0;
   --nes-paper-dark: #f0e6c8;
   --nes-text: #212529;

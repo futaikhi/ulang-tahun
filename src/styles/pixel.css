@@ -1,22 +1,22 @@
-/* Pure CSS Pixel Art Graphics & World Elements */
+/* Pure CSS Pixel Art Graphics & Spider-Man World Elements */
 
 /* 1. Pixel Hearts */
 .pixel-heart {
   width: 16px;
   height: 16px;
   display: inline-block;
-  background-color: var(--nes-red);
+  background-color: var(--spidey-red);
   position: relative;
   margin: 0 4px;
   vertical-align: middle;
   box-shadow:
-    -4px 0 0 var(--nes-red),
-    4px 0 0 var(--nes-red),
-    0 -4px 0 var(--nes-red),
-    -2px -6px 0 var(--nes-red),
-    2px -6px 0 var(--nes-red),
-    0 4px 0 var(--nes-red),
-    0 8px 0 var(--nes-red);
+    -4px 0 0 var(--spidey-red),
+    4px 0 0 var(--spidey-red),
+    0 -4px 0 var(--spidey-red),
+    -2px -6px 0 var(--spidey-red),
+    2px -6px 0 var(--spidey-red),
+    0 4px 0 var(--spidey-red),
+    0 8px 0 var(--spidey-red);
 }
 
 .pixel-heart-animated {
@@ -28,17 +28,17 @@
   50% { transform: scale(1.25); }
 }
 
-/* 2. Pixel Star */
+/* 2. Pixel Star / Spider Emblem */
 .pixel-star {
   width: 12px;
   height: 12px;
-  background-color: var(--nes-gold);
+  background-color: var(--spidey-yellow);
   display: inline-block;
   box-shadow:
-    -4px 0 0 var(--nes-gold),
-    4px 0 0 var(--nes-gold),
-    0 -4px 0 var(--nes-gold),
-    0 4px 0 var(--nes-gold);
+    -4px 0 0 var(--spidey-yellow),
+    4px 0 0 var(--spidey-yellow),
+    0 -4px 0 var(--spidey-yellow),
+    0 4px 0 var(--spidey-yellow);
   animation: starTwinkle 1.5s infinite ease-in-out alternate;
 }
 
@@ -51,199 +51,399 @@
 .pixel-cloud-bg {
   position: absolute;
   background-color: #ffffff;
-  border: 4px solid #000;
+  border: 3px solid #000;
   box-shadow:
-    0 -8px 0 #fff,
-    -8px 0 0 #fff,
-    8px 0 0 #fff,
-    -12px 8px 0 #fff,
-    12px 8px 0 #fff;
-  opacity: 0.85;
+    0 -6px 0 #fff,
+    -6px 0 0 #fff,
+    6px 0 0 #fff;
+  opacity: 0.95;
   z-index: 0;
   pointer-events: none;
 }
 
-/* 4. Pixel Birds */
-.pixel-bird {
+/* 4. Swinging Pixel Spider-Man in Sky */
+.pixel-spidey-swing {
   position: absolute;
-  width: 16px;
-  height: 8px;
-  background-color: #000;
-  box-shadow:
-    -4px -4px 0 #000,
-    4px -4px 0 #000;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.bird-1 {
-  top: 45px;
-  animation: birdFlap 0.35s infinite alternate, birdFly1 16s linear infinite;
-}
-
-.bird-2 {
-  top: 120px;
-  animation: birdFlap 0.4s infinite alternate, birdFly2 22s linear infinite;
-  animation-delay: -9s;
-  opacity: 0.8;
-}
-
-@keyframes birdFlap {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-3px); }
-}
-
-@keyframes birdFly1 {
-  0% { left: -30px; top: 45px; }
-  50% { top: 55px; }
-  100% { left: 105%; top: 40px; }
-}
-
-@keyframes birdFly2 {
-  0% { left: -30px; top: 120px; }
-  50% { top: 130px; }
-  100% { left: 105%; top: 110px; }
-}
-
-/* 5. NES Pixel World Landscape Footer (Grass, Flowers, Hills) */
-.nes-world-hills {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: radial-gradient(circle at 50% 100%, var(--nes-grass) 0%, var(--nes-grass) 70%, transparent 71%);
-  background-size: 140px 100px;
-  border-top: 4px solid #000;
   z-index: 2;
   pointer-events: none;
+  width: 32px;
+  height: 38px;
+  top: 70px;
+  animation: spideySwingFly 16s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-.nes-world-grass-bar {
+/* Web Line hanging from top to Spidey */
+.pixel-spidey-swing::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 14px;
+  width: 3px;
+  height: 120px;
+  background-color: #ffffff;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transform-origin: top center;
+}
+
+/* Pixel Spidey Sprite Body */
+.spidey-sprite-head {
+  width: 18px;
+  height: 16px;
+  background-color: var(--spidey-red);
+  border: 2px solid #000;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Spider Mask Eyes */
+.spidey-sprite-head::before, .spidey-sprite-head::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  width: 5px;
+  height: 6px;
+  background-color: #ffffff;
+  border: 1px solid #000;
+}
+.spidey-sprite-head::before { left: 2px; transform: rotate(-10deg); }
+.spidey-sprite-head::after { right: 2px; transform: rotate(10deg); }
+
+.spidey-sprite-body {
+  width: 20px;
+  height: 18px;
+  background-color: var(--spidey-blue);
+  border: 2px solid #000;
+  margin: -1px auto 0 auto;
+  position: relative;
+}
+
+/* Red Chest Emblem */
+.spidey-sprite-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 8px;
+  height: 12px;
+  background-color: var(--spidey-red);
+}
+
+@keyframes spideySwingFly {
+  0% {
+    left: -50px;
+    top: 40px;
+    transform: rotate(25deg);
+  }
+  30% {
+    top: 130px;
+    transform: rotate(5deg);
+  }
+  50% {
+    top: 60px;
+    transform: rotate(-20deg);
+  }
+  80% {
+    top: 110px;
+    transform: rotate(10deg);
+  }
+  100% {
+    left: 110%;
+    top: 40px;
+    transform: rotate(-15deg);
+  }
+}
+
+/* 5. City Skyline Footer Bar - Daytime NYC Dense Skyline */
+.pixel-city-bar {
   width: calc(100% + 32px);
   margin-left: -16px;
   margin-right: -16px;
-  height: 24px;
-  background-color: var(--nes-grass);
+  min-height: 64px;
+  background-color: #38bdf8;
   border-top: 4px solid #000;
   position: relative;
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-end;
+  padding: 0 4px;
   z-index: 3;
+  overflow: hidden;
 }
 
-.pixel-grass-blade {
-  width: 8px;
-  height: 12px;
-  background-color: var(--nes-grass-dark);
-  margin-top: -8px;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
-  animation: grassSway 2s infinite ease-in-out alternate;
+/* Swinging Spider-Man Animation Across Buildings */
+.city-spidey-swinger {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  z-index: 10;
+  pointer-events: none;
+  animation: citySpideySwing 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-@keyframes grassSway {
-  0% { transform: skewX(-5deg); }
-  100% { transform: skewX(5deg); }
+.city-web-string {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  width: 2px;
+  height: 55px;
+  background-color: #ffffff;
+  border-left: 1px solid #000000;
+  transform-origin: top center;
+  animation: webAngle 6s ease-in-out infinite;
 }
 
-/* 6. Pixel Flower Decoration */
-.pixel-flower {
-  width: 10px;
-  height: 10px;
-  background-color: var(--nes-gold);
-  border: 2px solid #000;
+/* Pixel Spider-Gwen Swing Sprite */
+.gwen-sprite {
+  width: 22px;
+  height: 28px;
   position: relative;
-  margin-top: -12px;
-  box-shadow:
-    -6px 0 0 #fff,
-    6px 0 0 #fff,
-    0 -6px 0 #fff,
-    0 6px 0 #fff;
+  filter: drop-shadow(2px 2px 0px #000000);
 }
 
-/* 7. Interactive NES Mushroom */
-.pixel-mushroom {
-  width: 24px;
-  height: 24px;
+.gwen-sprite-head {
+  width: 18px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px 4px 2px 2px;
+  margin: 0 auto;
   position: relative;
-  cursor: pointer;
-  display: inline-block;
-  animation: mushroomHop 1.2s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+  overflow: hidden;
 }
 
-@keyframes mushroomHop {
-  0%, 100% {
-    transform: translateY(0) scale(1, 1);
-  }
-  30% {
-    transform: translateY(-16px) scale(0.9, 1.1);
-  }
-  50% {
-    transform: translateY(-20px) scale(1, 1);
-  }
-  75% {
-    transform: translateY(0) scale(1.18, 0.82);
-  }
-  85% {
-    transform: translateY(-4px) scale(0.96, 1.04);
-  }
+/* Inner Pink Hood Lining */
+.gwen-hood-pink {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  right: 2px;
+  height: 4px;
+  background-color: #ec4899;
 }
 
-.pixel-mushroom:hover {
-  animation-duration: 0.7s;
-  filter: brightness(1.2);
+/* Spider-Gwen Mask Eyes */
+.gwen-eye-left, .gwen-eye-right {
+  position: absolute;
+  top: 6px;
+  width: 5px;
+  height: 6px;
+  background-color: #38bdf8;
+  border: 1px solid #000000;
 }
 
-.pixel-mushroom-cap {
-  width: 24px;
+.gwen-eye-left {
+  left: 2px;
+  transform: rotate(-12deg);
+}
+
+.gwen-eye-right {
+  right: 2px;
+  transform: rotate(12deg);
+}
+
+.gwen-sprite-body {
+  width: 18px;
   height: 14px;
-  background-color: var(--nes-red);
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  margin: -1px auto 0 auto;
+  position: relative;
+  border-radius: 0 0 2px 2px;
+}
+
+/* Pink Chest Accent */
+.gwen-chest-pink {
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #ec4899;
+  border-radius: 1px;
+}
+
+@keyframes citySpideySwing {
+  0% {
+    left: -40px;
+    top: -5px;
+    transform: rotate(-25deg);
+  }
+  20% {
+    top: 22px;
+    transform: rotate(15deg);
+  }
+  40% {
+    top: 0px;
+    transform: rotate(-20deg);
+  }
+  60% {
+    top: 26px;
+    transform: rotate(20deg);
+  }
+  80% {
+    top: 5px;
+    transform: rotate(-15deg);
+  }
+  100% {
+    left: calc(100% + 50px);
+    top: -5px;
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes webAngle {
+  0%, 100% { transform: rotate(-15deg); }
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(25deg); }
+  80% { transform: rotate(-10deg); }
+}
+
+.pixel-building {
   border: 3px solid #000;
   border-bottom: none;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 4px 2px;
+  justify-content: center;
+  align-content: flex-start;
+  flex-shrink: 0;
 }
 
-.pixel-mushroom-cap::before, .pixel-mushroom-cap::after {
+/* Building variants with different heights, widths, colors and roof details */
+.building-1 { width: 36px; height: 42px; background-color: #e62429; }
+.building-2 { width: 44px; height: 58px; background-color: #0f52ba; }
+.building-3 { width: 32px; height: 34px; background-color: #64748b; }
+.building-4 { width: 48px; height: 48px; background-color: #d97706; }
+.building-5 { width: 38px; height: 62px; background-color: #0284c7; }
+.building-6 { width: 30px; height: 40px; background-color: #991b1b; }
+.building-7 { width: 42px; height: 52px; background-color: #475569; }
+.building-8 { width: 36px; height: 36px; background-color: #eab308; }
+.building-9 { width: 40px; height: 56px; background-color: #2563eb; }
+
+/* Roof Antenna detail on tall buildings */
+.building-5::before, .building-2::before {
   content: '';
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: #fff;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 12px;
+  background-color: #000;
 }
 
-.pixel-mushroom-cap::before { top: 2px; left: 3px; }
-.pixel-mushroom-cap::after { top: 2px; right: 3px; }
+.pixel-window {
+  width: 5px;
+  height: 7px;
+  background-color: #e0f2fe;
+  border: 1px solid #000;
+}
 
-.pixel-mushroom-stem {
-  width: 14px;
-  height: 10px;
-  background-color: var(--nes-tan);
+.pixel-window-off {
+  background-color: #ffe500;
+}
+
+@keyframes windowFlicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+/* 6. Interactive Pixel Spider-Man Mask / Web Shooter Item */
+.pixel-spidey-mask-item {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  animation: spideyBounce 1.2s infinite ease-in-out;
+  transition: transform 0.2s ease;
+}
+
+@keyframes spideyBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.08); }
+}
+
+.pixel-spidey-mask-item:hover {
+  transform: scale(1.25) rotate(-5deg);
+  filter: drop-shadow(0 0 8px var(--spidey-red));
+}
+
+.pixel-spidey-head-shape {
+  width: 32px;
+  height: 28px;
+  background-color: var(--spidey-red);
   border: 3px solid #000;
-  margin: 0 auto;
+  box-shadow: inset -3px -3px 0 var(--spidey-red-dark);
+  position: relative;
 }
 
-/* Toast popup when clicking interactive items */
+/* Black Spider Web Lines on Mask */
+.pixel-spidey-head-shape::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+  box-shadow:
+    -6px 0 0 #000,
+    6px 0 0 #000;
+  opacity: 0.4;
+}
+
+/* Big White Pixel Eyes */
+.pixel-spidey-eye-left, .pixel-spidey-eye-right {
+  position: absolute;
+  top: 8px;
+  width: 10px;
+  height: 12px;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  z-index: 2;
+  box-shadow: 1px 1px 0 #000;
+}
+
+.pixel-spidey-eye-left {
+  left: 3px;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+}
+
+.pixel-spidey-eye-right {
+  right: 3px;
+  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+}
+
+/* Spider-Man Web Banner / Toast */
 .pixel-toast {
   position: fixed;
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #000;
-  color: var(--nes-gold);
-  border: 3px solid var(--nes-tan);
-  padding: 10px 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 4px solid var(--spidey-red);
+  box-shadow: 6px 6px 0 #000;
+  padding: 12px 18px;
   font-family: var(--font-pixel-heading);
-  font-size: 12px;
+  font-size: 11px;
   z-index: 1000;
-  animation: toastFade 2.5s forwards;
+  animation: toastFade 2.8s forwards;
   pointer-events: none;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.6;
 }
 
 @keyframes toastFade {
-  0% { opacity: 0; transform: translate(-50%, 10px); }
-  20% { opacity: 1; transform: translate(-50%, 0); }
-  80% { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, -20px); }
+  0% { opacity: 0; transform: translate(-50%, 15px) scale(0.9); }
+  15% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  85% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -20px) scale(0.95); }
 }

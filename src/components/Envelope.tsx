@@ -35,35 +35,46 @@ export default function Envelope({ isOpen, onToggle }: EnvelopeProps) {
         onClick={handleEnvelopeClick}
         role="button"
         tabIndex={0}
-        aria-label={isOpen ? "Sentuh untuk menutup surat" : "Sentuh untuk membuka surat"}
+        aria-label={isOpen ? "Klik untuk menutup surat" : "Klik untuk membuka surat"}
       >
         <div className="pixel-envelope">
-          {/* Top Fold Flap */}
-          <div className="envelope-flap"></div>
+          {/* Air Mail Pixel Border Stripes */}
+          <div className="airmail-stripes-top"></div>
 
-          {/* Envelope Heart Seal */}
-          <div className="envelope-seal">
-            <span className="pixel-heart pixel-heart-animated"></span>
+          {/* NYC Postage Stamp */}
+          <div className="envelope-stamp">
+            <span className="stamp-icon">🕷️💖</span>
+            <div className="stamp-details">
+              <span className="stamp-text">AIR MAIL</span>
+              <span className="stamp-date">NYC 2026</span>
+            </div>
           </div>
 
-          {/* Internal Peek Letter Paper */}
+          {/* Letter Paper Peek Inside */}
           <div className="letter-paper-peek">
-            <p style={{ fontFamily: 'var(--font-pixel-heading)', fontSize: '10px', color: '#c84c0c' }}>
-              UNTUK: LIA ❤️
-            </p>
-            <p style={{ fontFamily: 'var(--font-pixel-body)', fontSize: '14px', marginTop: '6px', color: '#333' }}>
-              {isOpen ? 'Surat terbuka...' : 'Sentuh untuk membaca surat rahasiaku...'}
+            <div className="peek-header">
+              <span className="peek-tag">CONFIDENTIAL LOVE LETTER</span>
+              <span className="peek-heart">💖</span>
+            </div>
+            <p className="peek-to">UTUK: LIA</p>
+            <p className="peek-msg">
+              {isOpen ? '✉️ Surat Terbuka di Bawah...' : '✨ Sentuh untuk membaca pesan ulang tahun...'}
             </p>
           </div>
 
-          {/* Front Pocket Folds */}
-          <div className="envelope-pocket-left"></div>
-          <div className="envelope-pocket-right"></div>
-          <div className="envelope-pocket-bottom"></div>
+          {/* Top Triangle Flap */}
+          <div className="envelope-flap">
+            <div className="flap-web-line">🕸️</div>
+          </div>
+
+          {/* Front Envelope Pocket Folds */}
+          <div className="envelope-front-fold"></div>
+
+          <div className="airmail-stripes-bottom"></div>
         </div>
 
         <div className="tap-hint">
-          {isOpen ? '✉️ Sentuh Amplop Untuk Menutup' : '✉️ Sentuh Amplop Untuk Membuka'}
+          {isOpen ? '💌 SENTUH AMPLOP UNTUK MENUTUP' : '💌 SENTUH AMPLOP UNTUK MEMBUKA'}
         </div>
       </div>
     </div>

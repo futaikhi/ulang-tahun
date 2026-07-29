@@ -1,4 +1,4 @@
-/* Hero Section Styles */
+/* Hero Section Styles - Spider-Man Daytime Edition */
 
 .hero-container {
   min-height: 100vh;
@@ -10,30 +10,44 @@
   align-items: center;
   position: relative;
   padding: 24px 16px 0 16px;
-  background: linear-gradient(180deg, var(--nes-sky) 0%, #80b0ff 60%, #a0c8ff 100%);
+  background: linear-gradient(180deg, #38bdf8 0%, #60a5fa 55%, #93c5fd 100%);
   text-align: center;
 }
 
 .hero-header {
-  margin-top: 16px;
+  margin-top: 12px;
   z-index: 10;
   width: 100%;
+}
+
+.spidey-badge-top {
+  display: inline-block;
+  background-color: var(--spidey-red);
+  color: #ffffff;
+  font-family: var(--font-pixel-heading);
+  font-size: 10px;
+  padding: 6px 14px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 
 .hero-greeting {
   font-family: var(--font-pixel-heading);
   font-size: 26px;
-  color: #ffffff;
+  color: var(--spidey-yellow);
   text-shadow:
-    3px 3px 0px #000,
+    3px 3px 0px var(--spidey-red),
     -3px -3px 0px #000,
     3px -3px 0px #000,
     -3px 3px 0px #000,
-    0px 4px 0px #000;
-  margin-bottom: 24px;
+    0px 5px 0px #000;
+  margin-bottom: 20px;
   animation: heroBounce 2s infinite ease-in-out;
   z-index: 10;
   position: relative;
+  margin-top: 20px;
 }
 
 @keyframes heroBounce {
@@ -42,9 +56,8 @@
 }
 
 .typewriter-box {
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 4px solid #ffffff;
+  background-color: rgba(255, 247, 247, 0.75);
+  border: 4px solid var(--spidey-red);
   outline: 4px solid #000000;
   padding: 20px 16px;
   margin: 0 auto;
@@ -55,14 +68,26 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 0px #000000;
   z-index: 10;
+  position: relative;
 }
+
+/* Corner Web Accents on Typewriter Box */
+.typewriter-box::before, .typewriter-box::after {
+  content: '🕸️';
+  position: absolute;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.typewriter-box::before { top: 4px; left: 6px; }
+.typewriter-box::after { top: 4px; right: 6px; }
 
 .typewriter-text {
   font-family: var(--font-pixel-body);
   font-size: 20px;
-  color: var(--nes-tan);
+  color: var(--spidey-red-dark);
+  font-weight: bold;
   line-height: 1.5;
   text-align: center;
 }
@@ -70,7 +95,7 @@
 .typewriter-subtext {
   font-family: var(--font-pixel-body);
   font-size: 17px;
-  color: #ffffff;
+  color: #0f172a;
   line-height: 1.5;
   text-align: center;
 }
@@ -79,7 +104,7 @@
   display: inline-block;
   width: 10px;
   height: 20px;
-  background-color: var(--nes-gold);
+  background-color: var(--spidey-red);
   margin-left: 4px;
   animation: cursorBlink 0.8s infinite;
   vertical-align: middle;
@@ -99,7 +124,7 @@
 .btn-open-gift {
   font-size: 16px;
   padding: 16px 28px;
-  background-color: var(--nes-red);
+  background-color: var(--spidey-red);
   color: #fff;
   border: 4px solid #000;
   box-shadow: 6px 6px 0px #000;
@@ -111,28 +136,36 @@
   100% { transform: scale(1.05); }
 }
 
-/* Clouds in Hero */
+/* Clouds in Hero (4 balanced clouds) */
 .cloud-1 {
-  top: 35px;
+  top: 30px;
   width: 90px;
   height: 24px;
-  animation: cloudMove1 22s linear infinite;
+  animation: cloudMove1 24s linear infinite;
 }
 
 .cloud-2 {
-  top: 110px;
+  top: 95px;
   width: 120px;
   height: 30px;
   animation: cloudMove2 32s linear infinite;
-  animation-delay: -12s;
+  animation-delay: -14s;
 }
 
 .cloud-3 {
-  top: 180px;
-  width: 75px;
-  height: 20px;
-  animation: cloudMove3 25s linear infinite;
-  animation-delay: -5s;
+  top: 170px;
+  width: 80px;
+  height: 22px;
+  animation: cloudMove3 26s linear infinite;
+  animation-delay: -6s;
+}
+
+.cloud-4 {
+  top: 240px;
+  width: 105px;
+  height: 26px;
+  animation: cloudMove1 30s linear infinite;
+  animation-delay: -20s;
 }
 
 @keyframes cloudMove1 {

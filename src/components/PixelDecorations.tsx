@@ -4,28 +4,26 @@ import { retroAudio } from '../utils/sound';
 export default function PixelDecorations() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  const handleMushroomClick = () => {
+  const handleSpideyClick = () => {
     retroAudio.playSfx('fanfare');
     const messages = [
-      '🍄 POWER UP! +100 LOVE FOR LIA! ❤️',
-      '⭐ LIA GETS SUPER STAR POWER! ✨',
-      '❤️ CINTAKU SELALU UNTUK LIA! 💖',
-      '🍄 LIA & ME: LEVEL UP TO MARRIAGE! 💍'
+      '🕷️ *THWIP!* WEB-SLINGING ALL MY LOVE TO LIA! ❤️',
+      '🕸️ LIA IS MY MARY JANE FOREVER! 💖',
+      '✨ SPIDER-SENSES TINGLING... LIA IS THE ONE! 💍',
+      '🕷️ WITH GREAT LOVE COMES GREAT RESPONSIBILITY! ❤️',
+      '🕸️ YOU & ME ACROSS THE SPIDER-VERSE! 🌌'
     ];
     const randomMsg = messages[Math.floor(Math.random() * messages.length)];
     setToastMessage(randomMsg);
 
     setTimeout(() => {
       setToastMessage(null);
-    }, 2500);
+    }, 2800);
   };
 
   return (
     <>
-      {/* Flying Bird in Sky */}
-      <div className="pixel-bird" style={{ top: '65px' }}></div>
-
-      {/* Floating Interactive Mushroom Section */}
+      {/* Floating Interactive Spider-Man Mask Section */}
       <div
         style={{
           display: 'flex',
@@ -37,14 +35,16 @@ export default function PixelDecorations() {
       >
         <span className="pixel-star"></span>
         <div
-          className="pixel-mushroom"
-          onClick={handleMushroomClick}
-          title="Sentuh Jamur Ajaib!"
+          className="pixel-spidey-mask-item"
+          onClick={handleSpideyClick}
+          title="Sentuh Topeng Spider-Man!"
           role="button"
           tabIndex={0}
         >
-          <div className="pixel-mushroom-cap"></div>
-          <div className="pixel-mushroom-stem"></div>
+          <div className="pixel-spidey-head-shape">
+            <div className="pixel-spidey-eye-left"></div>
+            <div className="pixel-spidey-eye-right"></div>
+          </div>
         </div>
         <span className="pixel-heart pixel-heart-animated"></span>
         <span className="pixel-star"></span>

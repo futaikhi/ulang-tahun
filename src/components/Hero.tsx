@@ -53,9 +53,11 @@ export default function Hero() {
       <div className="pixel-cloud-bg cloud-2"></div>
       <div className="pixel-cloud-bg cloud-3"></div>
 
-      {/* Background Flying Pixel Birds */}
-      <div className="pixel-bird bird-1"></div>
-      <div className="pixel-bird bird-2"></div>
+      {/* Swinging Pixel Spider-Man in Sky */}
+      <div className="pixel-spidey-swing">
+        <div className="spidey-sprite-head"></div>
+        <div className="spidey-sprite-body"></div>
+      </div>
 
       <h1 className="hero-greeting">Halo Lia ❤️</h1>
 

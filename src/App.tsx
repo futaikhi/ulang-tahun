@@ -52,14 +52,75 @@ export default function App() {
 
         {isLetterOpen && <PixelDecorations />}
 
-        {/* Grass Bar Base */}
-        <div className="nes-world-grass-bar" style={{ marginTop: '40px' }}>
-          <div className="pixel-grass-blade"></div>
-          <div className="pixel-flower"></div>
-          <div className="pixel-grass-blade"></div>
-          <div className="pixel-grass-blade"></div>
-          <div className="pixel-flower"></div>
-          <div className="pixel-grass-blade"></div>
+        {/* Spider-Man Pixel City Skyline Base - Dense NYC Buildings */}
+        <div className="pixel-city-bar" style={{ marginTop: '40px' }}>
+          {/* Swinging City Spider-Gwen Animation */}
+          <div className="city-spidey-swinger" title="Spider-Gwen swinging across NYC!">
+            <div className="city-web-string"></div>
+            <div className="gwen-sprite">
+              <div className="gwen-sprite-head">
+                <div className="gwen-hood-pink"></div>
+                <div className="gwen-eye-left"></div>
+                <div className="gwen-eye-right"></div>
+              </div>
+              <div className="gwen-sprite-body">
+                <div className="gwen-chest-pink"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pixel-building building-1">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-5">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-2">
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+          </div>
+          <div className="pixel-building building-6">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-3">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-7">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-4">
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-8">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+          </div>
+          <div className="pixel-building building-9">
+            <div className="pixel-window"></div>
+            <div className="pixel-window"></div>
+            <div className="pixel-window pixel-window-off"></div>
+            <div className="pixel-window"></div>
+          </div>
         </div>
       </section>
 
@@ -73,22 +134,22 @@ export default function App() {
         onNavigate={(newIdx) => setSelectedPhotoIndex(newIdx)}
       />
 
-      {/* Retro NES Footer */}
+      {/* Retro Spider-Man NES Footer */}
       <footer
         style={{
-          backgroundColor: '#000',
-          color: 'var(--nes-tan)',
+          backgroundColor: 'var(--spidey-red)',
+          color: '#ffffff',
           padding: '24px 16px',
           textAlign: 'center',
-          borderTop: '4px solid var(--nes-gold)',
+          borderTop: '4px solid #000000',
           fontFamily: 'var(--font-pixel-heading)',
           fontSize: '10px',
           lineHeight: '1.8'
         }}
       >
-        <p>UNTUK LIA ❤️ SELAMAT ULANG TAHUN</p>
-        <p style={{ color: '#888', marginTop: '6px' }}>
-          8-BIT HANDMADE EDITION • 2026
+        <p style={{ color: 'var(--spidey-yellow)' }}>🕷️ UNTUK LIA ❤️ SELAMAT ULANG TAHUN 🕸️</p>
+        <p style={{ color: '#ffffff', marginTop: '6px' }}>
+          8-BIT DAYTIME SPIDER-MAN EDITION • 2026
         </p>
       </footer>
     </div>

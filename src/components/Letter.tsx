@@ -24,10 +24,6 @@ export default function Letter({ isVisible }: LetterProps) {
           Terima kasih sudah menjadi tempat pulang, tempat bercerita, tempat mengeluh, sekaligus orang yang selalu berhasil membuat hari-hariku terasa lebih tenang.
         </p>
 
-        <p className="letter-body-paragraph highlight">
-          Sebentar lagi kita akan memasuki babak baru dalam hidup. InsyaAllah kita akan melangsungkan lamaran, lalu menikah tahun depan.
-        </p>
-
         <p className="letter-body-paragraph">
           Aku tahu perjalanan kita nanti tidak akan selalu mudah. Akan ada hari-hari melelahkan, akan ada perbedaan pendapat, akan ada masalah yang harus kita hadapi bersama.
         </p>
@@ -60,7 +56,7 @@ export default function Letter({ isVisible }: LetterProps) {
         </p>
 
         <p className="letter-body-paragraph" style={{ fontWeight: 'bold', fontSize: '20px', marginTop: '16px' }}>
-          Selamat ulang tahun, calon 'Player 2'ku. ❤️
+          Selamat ulang tahun, 'Player 2'ku. ❤️
         </p>
 
         <div className="letter-signature-box">

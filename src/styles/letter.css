@@ -28,7 +28,6 @@
     inset -4px -4px 0px rgba(0, 0, 0, 0.05);
   padding: 28px 20px;
   position: relative;
-  margin: 20px;
 }
 
 /* NES Letter Paper Texture / Stamp watermark top right */
@@ -39,16 +38,16 @@
   right: 14px;
   font-family: var(--font-pixel-heading);
   font-size: 9px;
-  color: #c89650;
-  border: 2px dashed #c89650;
+  color: var(--spidey-red);
+  border: 2px dashed var(--spidey-red);
   padding: 4px 6px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .letter-header-title {
   font-family: var(--font-pixel-heading);
   font-size: 15px;
-  color: var(--nes-red);
+  color: var(--spidey-red);
   margin-bottom: 20px;
   line-height: 1.5;
   text-align: left;
