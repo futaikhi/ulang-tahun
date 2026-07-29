@@ -85,7 +85,7 @@ export default function Modal({ selectedIndex, onClose, onNavigate }: ModalProps
         onTouchEnd={handleTouchEnd}
       >
         <button
-          className="modal-close-btn"
+          className="modal-close-btn bugle-modal-close"
           onClick={() => {
             retroAudio.playSfx('click');
             onClose();
@@ -95,27 +95,38 @@ export default function Modal({ selectedIndex, onClose, onNavigate }: ModalProps
           ✕
         </button>
 
-        <span className="pixel-badge" style={{ marginBottom: '12px' }}>
-          {currentPhoto.date} ({selectedIndex + 1}/{STAMP_PHOTOS.length})
-        </span>
+        <div className="bugle-modal-header">
+          <div className="bugle-modal-paper-badge">
+            📰 DAILY BUGLE • FRONT PAGE EXTRA!
+          </div>
+          <span className="bugle-modal-date">
+            {currentPhoto.date} ({selectedIndex + 1}/{STAMP_PHOTOS.length})
+          </span>
+        </div>
 
-        <div className="modal-img-frame">
+        <h3 className="bugle-modal-headline">{currentPhoto.title}</h3>
+
+        <div className="bugle-modal-img-frame">
           <img
             src={currentPhoto.src}
             alt={currentPhoto.title}
-            className="modal-img"
+            className="bugle-modal-img"
             referrerPolicy="no-referrer"
           />
+          <div className="bugle-img-caption-strip">
+            <span>📷 ARCHIVE PRESS PHOTO #0{selectedIndex + 1} • BY PETER PARKER</span>
+          </div>
         </div>
 
-        <h3 className="modal-title">{currentPhoto.title}</h3>
-        <p className="modal-desc">{currentPhoto.caption}</p>
+        <div className="bugle-modal-article-body">
+          <p className="bugle-modal-text">{currentPhoto.caption}</p>
+        </div>
 
-        <div className="modal-nav">
-          <button className="pixel-btn pixel-btn-secondary modal-nav-btn" onClick={handlePrev}>
+        <div className="modal-nav bugle-modal-nav">
+          <button className="pixel-btn bugle-nav-btn" onClick={handlePrev}>
             ◀
           </button>
-          <button className="pixel-btn modal-nav-btn" onClick={handleNext}>
+          <button className="pixel-btn bugle-nav-btn bugle-nav-btn-main" onClick={handleNext}>
             ▶
           </button>
         </div>

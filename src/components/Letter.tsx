@@ -62,12 +62,6 @@ export default function Letter({ isVisible }: LetterProps) {
         <div className="letter-signature-box">
           - Dari 'Player 1'mu.
         </div>
-
-        <div className="letter-heart-footer">
-          <span className="pixel-heart"></span>
-          <span className="pixel-heart"></span>
-          <span className="pixel-heart"></span>
-        </div>
       </div>
     </div>
   );
